@@ -7,6 +7,19 @@ import SearchBox from '@/components/SearchBox';
 import ThemeToggle from '@/components/ThemeToggle';
 import {TeaserMessage, teaserMessages} from '@/data/teaserMessages';
 
+function HeartIcon() {
+  return (
+    <svg
+      aria-hidden="true"
+      viewBox="0 0 24 24"
+      className="mx-1 inline h-3.5 w-3.5 align-[-0.16em] text-amber-700 dark:text-amber-200"
+      fill="currentColor"
+    >
+      <path d="M12 21s-7.2-4.4-9.6-8.8C.5 8.8 2.3 4.8 6.1 4.3c2.1-.3 4.1.8 5.2 2.5 1.1-1.7 3.1-2.8 5.2-2.5 3.8.5 5.6 4.5 3.7 7.9C19.2 16.6 12 21 12 21Z" />
+    </svg>
+  );
+}
+
 export default function HomePage() {
   const [selectedMessage, setSelectedMessage] = useState<TeaserMessage | null>(
     null
@@ -25,7 +38,7 @@ export default function HomePage() {
         <ThemeToggle />
       </div>
 
-      <section className="relative mx-auto flex min-h-[calc(100vh-5rem)] w-full max-w-5xl flex-col items-center justify-center pb-16 pt-10 text-center">
+      <section className="relative mx-auto flex min-h-[calc(100vh-7rem)] w-full max-w-5xl flex-col items-center justify-center pb-12 pt-10 text-center">
         <div className="mb-10 flex justify-center">
           <Image
             src="/logo.png"
@@ -41,7 +54,7 @@ export default function HomePage() {
           Costa del Sol, selected with better taste
         </p>
 
-        <h1 className="mt-7 max-w-3xl text-balance text-4xl font-light tracking-[-0.04em] text-stone-950 dark:text-[#f7f1e8] sm:text-5xl md:text-6xl">
+        <h1 className="mt-7 max-w-3xl text-balance text-3xl font-light tracking-[-0.035em] text-stone-950 dark:text-[#f7f1e8] sm:text-4xl md:text-5xl">
           A finer way to ask the coast is coming.
         </h1>
 
@@ -54,6 +67,22 @@ export default function HomePage() {
 
         <ResponseCard message={selectedMessage} />
       </section>
+
+      <footer className="relative mx-auto max-w-6xl pb-5 text-center text-xs leading-6 text-stone-500 dark:text-stone-500">
+        <p>
+          naralimon.es brought to you with <HeartIcon /> by Naralimon, Mijas
+          Costa (Málaga) · Developed by{' '}
+          <a
+            href="https://sienda.co.uk"
+            target="_blank"
+            rel="noreferrer"
+            className="text-stone-700 underline decoration-stone-300 underline-offset-4 transition hover:text-stone-950 dark:text-stone-300 dark:decoration-white/20 dark:hover:text-white"
+          >
+            Sienda Ltd
+          </a>
+          , London UK
+        </p>
+      </footer>
     </main>
   );
 }
