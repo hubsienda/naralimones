@@ -30,6 +30,10 @@ export default function HomePage() {
     setSelectedMessage(teaserMessages[randomIndex]);
   }
 
+  function refreshPage() {
+    window.location.reload();
+  }
+
   return (
     <main className="relative min-h-screen overflow-hidden bg-[radial-gradient(circle_at_top,#fff8ed_0%,#ffffff_38%,#f8f4ee_100%)] px-5 py-6 text-stone-950 transition-colors dark:bg-[radial-gradient(circle_at_top,#1b1711_0%,#090807_42%,#020202_100%)] dark:text-white sm:px-8">
       <div className="pointer-events-none absolute inset-x-0 top-0 h-64 bg-gradient-to-b from-amber-100/30 to-transparent dark:from-amber-300/5" />
@@ -39,16 +43,21 @@ export default function HomePage() {
       </div>
 
       <section className="relative mx-auto flex min-h-[calc(100vh-7rem)] w-full max-w-5xl flex-col items-center justify-center pb-12 pt-10 text-center">
-        <div className="mb-10 flex justify-center">
+        <button
+          type="button"
+          onClick={refreshPage}
+          aria-label="Refresh Naralimon page"
+          className="mb-10 flex cursor-pointer justify-center rounded-3xl focus:outline-none focus:ring-4 focus:ring-amber-600/20"
+        >
           <Image
             src="/logo.png"
             alt="Naralimon"
             width={360}
             height={140}
             priority
-            className="h-auto w-[230px] sm:w-[300px] md:w-[360px]"
+            className="h-auto w-[230px] transition duration-300 hover:opacity-85 sm:w-[300px] md:w-[360px]"
           />
-        </div>
+        </button>
 
         <p className="max-w-2xl text-balance text-sm uppercase tracking-[0.34em] text-stone-500 dark:text-stone-400">
           Costa del Sol, selected with better taste
