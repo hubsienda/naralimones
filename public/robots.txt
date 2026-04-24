@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://naralimon.es/sitemap.xml
